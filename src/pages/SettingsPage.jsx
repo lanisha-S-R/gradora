@@ -12,15 +12,15 @@ export default function SettingsPage() {
   const { curriculum, settings, updateSettings } = useAppContext();
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
-      studentName: settings.studentName || 'Scholar',
-      targetCgpa: settings.targetCgpa || 9,
+      studentName: settings.studentName || '',
+      targetCgpa: settings.targetCgpa || '',
     },
   });
 
   useEffect(() => {
     reset({
-      studentName: settings.studentName || 'Scholar',
-      targetCgpa: settings.targetCgpa || 9,
+      studentName: settings.studentName || '',
+      targetCgpa: settings.targetCgpa || '',
     });
   }, [reset, settings.studentName, settings.targetCgpa]);
 
@@ -70,7 +70,7 @@ export default function SettingsPage() {
             <Input
               label="Student Name"
               {...register('studentName', { required: true })}
-              placeholder="Scholar"
+              placeholder="Enter your name"
             />
             <Input
               label="Target CGPA"
@@ -79,7 +79,7 @@ export default function SettingsPage() {
               min="5"
               max="10"
               {...register('targetCgpa', { required: true, min: 5, max: 10 })}
-              placeholder="9"
+              placeholder="Enter target CGPA"
             />
             <Button type="submit" className="w-full">Save Preferences</Button>
           </form>

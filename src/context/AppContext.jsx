@@ -13,8 +13,8 @@ export function AppProvider({ children }) {
   const { theme, toggleTheme, setTheme } = useTheme();
   const [semesterRecords, setSemesterRecords] = useLocalStorage(STORAGE_KEYS.semesters, []);
   const [settings, setSettings] = useLocalStorage(STORAGE_KEYS.settings, {
-    targetCgpa: 9,
-    studentName: 'Scholar',
+    targetCgpa: 0,
+    studentName: '',
   });
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
