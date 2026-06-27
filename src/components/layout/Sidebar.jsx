@@ -26,7 +26,7 @@ const navItems = [
 function SidebarContent({ closeSidebar }) {
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between px-5 py-5">
+      <div className="flex items-center justify-between px-4 py-4 sm:px-5 sm:py-5">
         <div className="flex items-center gap-3">
           <div className="rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-600 p-2 text-white">
             <GraduationCap size={20} />
@@ -44,7 +44,7 @@ function SidebarContent({ closeSidebar }) {
         </button>
       </div>
 
-      <div className="flex-1 px-3">
+      <div className="flex-1 px-2 sm:px-3">
         <div className="space-y-2">
           {navItems.map(({ label, to, icon: Icon }) => (
             <NavLink
@@ -67,8 +67,8 @@ function SidebarContent({ closeSidebar }) {
         </div>
       </div>
 
-      <div className="border-t border-white/50 px-5 py-4 dark:border-slate-800">
-        <div className="flex items-center justify-between rounded-2xl bg-white/60 p-3 dark:bg-slate-900/50">
+      <div className="border-t border-white/50 px-4 py-4 sm:px-5 dark:border-slate-800">
+        <div className="flex items-center justify-between gap-3 rounded-2xl bg-white/60 p-3 dark:bg-slate-900/50">
           <div>
             <div className="text-sm font-medium text-slate-900 dark:text-white">Dark Mode</div>
             <div className="text-xs text-slate-500 dark:text-slate-400">Comfortable night view</div>
@@ -85,7 +85,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <aside className="hidden w-72 border-r border-white/40 bg-white/50 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/40 lg:block">
+      <aside className="hidden w-72 max-w-[85vw] border-r border-white/40 bg-white/50 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/40 lg:block">
         <SidebarContent closeSidebar={() => {}} />
       </aside>
 
@@ -104,7 +104,7 @@ export default function Sidebar() {
               animate={{ x: 0 }}
               exit={{ x: -320 }}
               transition={{ type: 'spring', stiffness: 280, damping: 26 }}
-              className="fixed inset-y-0 left-0 z-50 w-72 border-r border-white/40 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90 lg:hidden"
+              className="fixed inset-y-0 left-0 z-50 w-72 max-w-[85vw] border-r border-white/40 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90 lg:hidden"
             >
               <SidebarContent closeSidebar={() => setSidebarOpen(false)} />
             </motion.aside>

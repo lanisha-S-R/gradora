@@ -17,7 +17,7 @@ export default function AboutPage() {
         description="A refined personal academic system designed to make semester management feel effortless, clear, and premium."
       />
 
-      <div className="grid gap-6 xl:grid-cols-[1.1fr,0.9fr]">
+      <div className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
         <Card className="p-6">
           <div className="flex items-center gap-3">
             <div className="rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-600 p-3 text-white">

@@ -15,7 +15,7 @@ export default function StatCard({ title, value, icon: Icon, hint, accent = 'ind
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-sm text-slate-500 dark:text-slate-400">{title}</p>
-            <h3 className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">{value}</h3>
+            <h3 className="mt-2 text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">{value}</h3>
             {hint && <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{hint}</p>}
           </div>
           <div className={`rounded-2xl bg-gradient-to-br p-3 text-white ${accents[accent]}`}>

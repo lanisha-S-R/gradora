@@ -7,7 +7,7 @@ export default function OverviewCards() {
   const { analytics } = useAppContext();
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+    <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
       <StatCard title="Current CGPA" value={formatNumber(analytics.cgpa)} icon={Sigma} accent="indigo" hint="Weighted cumulative average" />
       <StatCard title="Completed Credits" value={formatNumber(analytics.completedCredits, 1)} icon={BookOpen} accent="emerald" hint="All registered semesters" />
       <StatCard title="Completed Semesters" value={analytics.completedSemesters} icon={GraduationCap} accent="purple" hint="Saved in your academic history" />

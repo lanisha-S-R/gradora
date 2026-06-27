@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Stepper({ steps, currentStep }) {
   return (
-    <div className="grid gap-4 md:grid-cols-5">
+    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
       {steps.map((step, index) => {
         const isCompleted = index < currentStep;
         const isCurrent = index === currentStep;

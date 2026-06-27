@@ -38,7 +38,7 @@ export default function SettingsPage() {
         description="Tune your academic profile and personalize the target GPA that guides your dashboard."
       />
 
-      <div className="grid gap-6 xl:grid-cols-[0.9fr,1.1fr]">
+      <div className="grid gap-6 lg:grid-cols-[0.9fr,1.1fr]">
         <Card className="p-5">
           <div className="flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-300">
             <Sparkles size={16} />

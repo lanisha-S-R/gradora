@@ -16,10 +16,10 @@ export default function WelcomePanel() {
             <Sparkles size={14} />
             Premium academic intelligence
           </div>
-          <h2 className="mt-4 text-3xl font-bold text-slate-900 dark:text-white">
+          <h2 className="mt-4 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
             Welcome back, <span className="gradient-text">{settings.studentName}</span>
           </h2>
-          <p className="mt-3 max-w-2xl text-slate-600 dark:text-slate-300">
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300 sm:text-base">
             Track SGPA, monitor CGPA, and stay aligned with your academic target through a clean,
             real-time dashboard built for your AI & Data Science curriculum.
           </p>

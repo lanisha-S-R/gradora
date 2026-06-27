@@ -88,11 +88,11 @@ export default function CalculatorPage() {
 
       <Stepper steps={steps} currentStep={currentStep} />
 
-      <div className="grid gap-6 xl:grid-cols-[1.3fr,0.8fr]">
+      <div className="grid gap-6 lg:grid-cols-[1.3fr,0.8fr] lg:items-start">
         <div className="space-y-6">
           <Card className="p-5">
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Choose Semester</h3>
-            <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
               {curriculum.semesters.map((semester) => (
                 <SemesterCard
                   key={semester.id}

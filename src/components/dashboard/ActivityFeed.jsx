@@ -16,7 +16,7 @@ export default function ActivityFeed() {
           recent.map((item) => (
             <div key={item.id} className="flex items-start gap-3">
               <div className="mt-1 h-3 w-3 rounded-full bg-emerald-500" />
-              <div>
+              <div className="min-w-0">
                 <div className="font-medium text-slate-900 dark:text-white">
                   {item.semesterName} saved with SGPA {formatNumber(item.sgpa)}
                 </div>

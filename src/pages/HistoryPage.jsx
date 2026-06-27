@@ -59,7 +59,7 @@ export default function HistoryPage() {
                       </span>
                     </div>
 
-                    <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                       <div className="rounded-2xl bg-white/70 p-3 dark:bg-slate-900/50">
                         <div className="text-sm text-slate-500 dark:text-slate-400">SGPA</div>
                         <div className="mt-1 text-lg font-semibold text-slate-900 dark:text-white">{formatNumber(record.sgpa)}</div>
@@ -75,16 +75,16 @@ export default function HistoryPage() {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    <Button variant="secondary" onClick={() => handleEdit(record)} className="gap-2">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+                    <Button variant="secondary" onClick={() => handleEdit(record)} className="w-full gap-2 sm:w-auto">
                       <PencilLine size={16} />
                       Edit
                     </Button>
-                    <Button variant="secondary" onClick={() => handleExport(record)} className="gap-2">
+                    <Button variant="secondary" onClick={() => handleExport(record)} className="w-full gap-2 sm:w-auto">
                       <Download size={16} />
                       Export PDF
                     </Button>
-                    <Button variant="danger" onClick={() => deleteSemesterRecord(record.id)} className="gap-2">
+                    <Button variant="danger" onClick={() => deleteSemesterRecord(record.id)} className="w-full gap-2 sm:w-auto">
                       <Trash2 size={16} />
                       Delete
                     </Button>

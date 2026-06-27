@@ -36,18 +36,18 @@ export default function LandingPage() {
       <Navbar />
 
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid min-h-[88vh] max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div className="mx-auto grid min-h-[88vh] max-w-7xl items-center gap-8 px-3 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-10 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white/70 px-4 py-2 text-sm text-indigo-700 dark:border-indigo-500/30 dark:bg-slate-900/50 dark:text-indigo-300">
               <Sparkles size={16} />
               Personal academic dashboard for focused performance tracking
             </div>
 
-            <h1 className="mt-6 text-5xl font-black tracking-tight text-slate-900 dark:text-white md:text-6xl">
+            <h1 className="mt-6 text-4xl font-black tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-6xl">
               Calculate smarter with <span className="gradient-text">GRADORA</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+            <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">
               A premium academic dashboard that auto-loads your curriculum, lets you enter only grades,
               and transforms semester performance into live insights, clean history, and polished reports.
             </p>
@@ -96,7 +96,7 @@ export default function LandingPage() {
                 </div>
                 <div className="rounded-[24px] bg-gradient-to-r from-indigo-600 to-purple-600 p-5 text-white">
                   <div className="text-sm text-indigo-100">Real-time performance intelligence</div>
-                  <div className="mt-2 text-2xl font-bold">Only enter grades. Everything else is automatic.</div>
+                  <div className="mt-2 text-xl font-bold sm:text-2xl">Only enter grades. Everything else is automatic.</div>
                 </div>
               </div>
             </Card>

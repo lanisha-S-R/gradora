@@ -43,7 +43,7 @@ export default function AnalyticsPage() {
         description="View semester performance, credit flow, and a simple target GPA calculator to guide what comes next."
       />
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <StatCard title="Highest Semester" value={analytics.highestSemester ? formatNumber(analytics.highestSemester.sgpa) : '—'} icon={TrendingUp} accent="emerald" hint="Best recorded SGPA" />
         <StatCard title="Lowest Semester" value={analytics.lowestSemester ? formatNumber(analytics.lowestSemester.sgpa) : '—'} icon={TrendingDown} accent="purple" hint="Current floor in your history" />
         <StatCard title="Average GPA" value={formatNumber(analytics.averageGpa)} icon={BarChart3} accent="indigo" hint="Mean of saved semesters" />
@@ -52,7 +52,7 @@ export default function AnalyticsPage() {
 
       <div className="grid gap-6 xl:grid-cols-[1.2fr,0.8fr]">
         <Card className="p-5">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Semester-wise GPA Trend</h3>
               <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">View how SGPA and cumulative GPA evolved across your saved semesters.</p>
