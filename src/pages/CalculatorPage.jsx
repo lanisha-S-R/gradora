@@ -9,7 +9,7 @@ import LiveResultsPanel from '../components/calculator/LiveResultsPanel';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { useAppContext } from '../context/AppContext';
-import { useSupabaseData } from '../context/SupabaseDataContext';
+import { useLocalData } from '../context/LocalDataContext';
 import { calculateCGPA, calculateSemesterResult } from '../utils/calculations';
 
 const steps = ['Choose Semester', 'Subjects Loaded', 'Select Grades', 'Live SGPA', 'Save Semester'];
@@ -17,7 +17,7 @@ const steps = ['Choose Semester', 'Subjects Loaded', 'Select Grades', 'Live SGPA
 export default function CalculatorPage() {
   const location = useLocation();
   const { curriculum } = useAppContext();
-  const { saveSemesterRecord, semesterRecords } = useSupabaseData();
+  const { saveSemesterRecord, semesterRecords } = useLocalData();
   const [selectedSemesterId, setSelectedSemesterId] = useState(1);
   const [gradesMap, setGradesMap] = useState({});
 

@@ -2,12 +2,12 @@ import { Sparkles, Target } from 'lucide-react';
 import Card from '../ui/Card';
 import ProgressRing from '../common/ProgressRing';
 import { useAppContext } from '../../context/AppContext';
-import { useSupabaseData } from '../../context/SupabaseDataContext';
+import { useLocalData } from '../../context/LocalDataContext';
 import { formatNumber } from '../../utils/formatters';
 
 export default function WelcomePanel() {
   const { curriculum } = useAppContext();
-  const { analytics, settings } = useSupabaseData();
+  const { analytics, settings } = useLocalData();
   const progress = (analytics.completedSemesters / curriculum.semesters.length) * 100;
 
   return (

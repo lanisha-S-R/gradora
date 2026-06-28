@@ -8,9 +8,7 @@ import HistoryPage from './pages/HistoryPage';
 import AnalyticsPage from './pages/AnalyticsPage';
 import SettingsPage from './pages/SettingsPage';
 import AboutPage from './pages/AboutPage';
-import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
-import AuthGuard from './components/common/AuthGuard';
 
 export default function App() {
   const location = useLocation();
@@ -19,15 +17,7 @@ export default function App() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route
-          path="/app"
-          element={
-            <AuthGuard>
-              <AppLayout />
-            </AuthGuard>
-          }
-        >
+        <Route path="/app" element={<AppLayout /> }>
           <Route index element={<Navigate to="dashboard" replace />} />
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="calculator" element={<CalculatorPage />} />

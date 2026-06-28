@@ -6,12 +6,12 @@ import PageHeader from '../components/common/PageHeader';
 import ProgressRing from '../components/common/ProgressRing';
 import StatCard from '../components/common/StatCard';
 import Card from '../components/ui/Card';
-import { useSupabaseData } from '../context/SupabaseDataContext';
+import { useLocalData } from '../context/LocalDataContext';
 import { calculateTargetGpa } from '../utils/calculations';
 import { formatNumber } from '../utils/formatters';
 
 export default function AnalyticsPage() {
-  const { semesterRecords, analytics, settings } = useSupabaseData();
+  const { semesterRecords, analytics, settings } = useLocalData();
 
   const sortedRecords = useMemo(
     () => [...semesterRecords].sort((a, b) => a.semesterId - b.semesterId),

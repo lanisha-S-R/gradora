@@ -6,13 +6,13 @@ import EmptyState from '../components/common/EmptyState';
 import PageHeader from '../components/common/PageHeader';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import { useSupabaseData } from '../context/SupabaseDataContext';
+import { useLocalData } from '../context/LocalDataContext';
 import { formatDate, formatNumber } from '../utils/formatters';
 import { exportSemesterPdf } from '../utils/pdf';
 
 export default function HistoryPage() {
   const navigate = useNavigate();
-  const { semesterRecords, deleteSemesterRecord, resetAllRecords, analytics } = useSupabaseData();
+  const { semesterRecords, deleteSemesterRecord, resetAllRecords, analytics } = useLocalData();
 
   const sortedRecords = useMemo(
     () => [...semesterRecords].sort((a, b) => new Date(b.savedAt) - new Date(a.savedAt)),
