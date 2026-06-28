@@ -8,9 +8,11 @@ import {
   Info,
   LayoutDashboard,
   Settings,
+  LogOut,
   X,
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import { useAppContext } from '../../context/AppContext';
 import ThemeToggle from '../common/ThemeToggle';
 
@@ -23,7 +25,7 @@ const navItems = [
   { label: 'About', to: '/app/about', icon: Info },
 ];
 
-function SidebarContent({ closeSidebar }) {
+function SidebarContent({ closeSidebar, user, onSignOut }) {
   return (
     <div className="flex h-full flex-col">
       <div className="flex items-center justify-between px-4 py-4 sm:px-5 sm:py-5">
@@ -75,6 +77,16 @@ function SidebarContent({ closeSidebar }) {
           </div>
           <ThemeToggle />
         </div>
+        {user && (
+          <button
+            type="button"
+            onClick={onSignOut}
+            className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border border-white/60 bg-rose-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-rose-600 dark:border-slate-700"
+          >
+            <LogOut size={16} />
+            Sign out
+          </button>
+        )}
       </div>
     </div>
   );
@@ -82,11 +94,12 @@ function SidebarContent({ closeSidebar }) {
 
 export default function Sidebar() {
   const { sidebarOpen, setSidebarOpen } = useAppContext();
+  const { user, signOut } = useAuth();
 
   return (
     <>
       <aside className="hidden w-72 max-w-[85vw] border-r border-white/40 bg-white/50 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/40 lg:block">
-        <SidebarContent closeSidebar={() => {}} />
+        <SidebarContent closeSidebar={() => {}} user={user} onSignOut={signOut} />
       </aside>
 
       <AnimatePresence>
@@ -106,7 +119,7 @@ export default function Sidebar() {
               transition={{ type: 'spring', stiffness: 280, damping: 26 }}
               className="fixed inset-y-0 left-0 z-50 w-72 max-w-[85vw] border-r border-white/40 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90 lg:hidden"
             >
-              <SidebarContent closeSidebar={() => setSidebarOpen(false)} />
+              <SidebarContent closeSidebar={() => setSidebarOpen(false)} user={user} onSignOut={signOut} />
             </motion.aside>
           </>
         )}

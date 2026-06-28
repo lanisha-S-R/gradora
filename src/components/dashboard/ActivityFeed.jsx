@@ -1,9 +1,9 @@
 import Card from '../ui/Card';
-import { useAppContext } from '../../context/AppContext';
+import { useSupabaseData } from '../../context/SupabaseDataContext';
 import { formatDate, formatNumber } from '../../utils/formatters';
 
 export default function ActivityFeed() {
-  const { semesterRecords } = useAppContext();
+  const { semesterRecords } = useSupabaseData();
   const recent = [...semesterRecords]
     .sort((a, b) => new Date(b.savedAt) - new Date(a.savedAt))
     .slice(0, 5);

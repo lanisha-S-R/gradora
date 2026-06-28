@@ -1,10 +1,10 @@
 import Card from '../ui/Card';
-import { useAppContext } from '../../context/AppContext';
+import { useSupabaseData } from '../../context/SupabaseDataContext';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { formatNumber } from '../../utils/formatters';
 
 export default function AnalyticsPreview() {
-  const { semesterRecords } = useAppContext();
+  const { semesterRecords } = useSupabaseData();
 
   const data = [...semesterRecords]
     .sort((a, b) => a.semesterId - b.semesterId)

@@ -1,10 +1,10 @@
 import { BookOpen, GraduationCap, Sigma, TrendingUp } from 'lucide-react';
-import { useAppContext } from '../../context/AppContext';
+import { useSupabaseData } from '../../context/SupabaseDataContext';
 import StatCard from '../common/StatCard';
 import { formatNumber } from '../../utils/formatters';
 
 export default function OverviewCards() {
-  const { analytics } = useAppContext();
+  const { analytics } = useSupabaseData();
 
   return (
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">

@@ -6,10 +6,12 @@ import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import Input from '../components/ui/Input';
 import { useAppContext } from '../context/AppContext';
+import { useSupabaseData } from '../context/SupabaseDataContext';
 import { formatNumber } from '../utils/formatters';
 
 export default function SettingsPage() {
-  const { curriculum, settings, updateSettings } = useAppContext();
+  const { curriculum } = useAppContext();
+  const { settings, updateSettings } = useSupabaseData();
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
       studentName: settings.studentName || '',
